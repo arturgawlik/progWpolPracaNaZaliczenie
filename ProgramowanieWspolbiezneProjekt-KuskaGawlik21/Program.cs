@@ -37,16 +37,16 @@ namespace ProgramowanieWspolbiezneProjekt_KuskaGawlik21
         public Thread F = new Thread(() =>
         {
             const int _threadNumber = 0;
-            int[] array = new int[_arraySize];
+            int[] array0 = new int[_arraySize];
             int[] commonArray = new int[3];
             var _random = new Random();
 
             for (int i = 0; i < _arraySize; i++)
             {
-                array[i] = _random.Next(1, 10);
+                array0[i] = _random.Next(1, 10);
             }
               
-            array = array.OrderByDescending(x => x).ToArray();
+            array0 = array0.OrderByDescending(x => x).ToArray();
             bool isFirstTime = true;
 
             for (var i = _arraySize - 1; i > 0; i-- )
@@ -56,7 +56,7 @@ namespace ProgramowanieWspolbiezneProjekt_KuskaGawlik21
                 if (isFirstTime || commonArray[1] > commonArray[0] || commonArray[2] > commonArray[0])
                 {
                     isFirstTime = false;
-                    commonArray = SaveSmalletsValue(array[i], _threadNumber);
+                    commonArray = SaveSmalletsValue(array0[i], _threadNumber);
                 }
 
                 if (commonArray.Distinct().Count() == 1)
@@ -72,15 +72,15 @@ namespace ProgramowanieWspolbiezneProjekt_KuskaGawlik21
         public Thread G = new Thread(() =>
         {
             const int _threadNumber = 1;
-            int[] array = new int[_arraySize];
+            int[] array1 = new int[_arraySize];
             int[] commonArray = new int[3];
             var _random = new Random();
             for (int i = 0; i < _arraySize; i++)
             {
-                array[i] = _random.Next(1, 10);
+                array1[i] = _random.Next(1, 10);
             }
 
-            array = array.OrderByDescending(x => x).ToArray();
+            array1 = array1.OrderByDescending(x => x).ToArray();
             bool isFirstTime = true;
 
             for (var i = _arraySize - 1; i > 0; i--)
@@ -90,7 +90,7 @@ namespace ProgramowanieWspolbiezneProjekt_KuskaGawlik21
                 if (isFirstTime || commonArray[0] > commonArray[1] || commonArray[2] > commonArray[1])
                 {
                     isFirstTime = false;
-                    commonArray = SaveSmalletsValue(array[i], _threadNumber);
+                    commonArray = SaveSmalletsValue(array1[i], _threadNumber);
                 }
 
                 if (commonArray.Distinct().Count() == 1)
@@ -105,15 +105,15 @@ namespace ProgramowanieWspolbiezneProjekt_KuskaGawlik21
         public Thread H = new Thread(() =>
         {
             const int _threadNumber = 2;
-            int[] array = new int[_arraySize];
+            int[] array2 = new int[_arraySize];
             int[] commonArray = new int[3];
             var _random = new Random();
             for (int i = 0; i < _arraySize; i++)
             {
-                array[i] = _random.Next(1, 10);
+                array2[i] = _random.Next(1, 10);
             }
 
-            array = array.OrderByDescending(x => x).ToArray();
+            array2 = array2.OrderByDescending(x => x).ToArray();
             bool isFirstTime = true;
 
             for (var i = _arraySize - 1; i > 0; i--)
@@ -123,7 +123,7 @@ namespace ProgramowanieWspolbiezneProjekt_KuskaGawlik21
                 if (isFirstTime || commonArray[0] > commonArray[2] || commonArray[1] > commonArray[2])
                 {
                     isFirstTime = false;
-                    commonArray = SaveSmalletsValue(array[i], _threadNumber);
+                    commonArray = SaveSmalletsValue(array2[i], _threadNumber);
                 }
 
                 if (commonArray.Distinct().Count() == 1)
